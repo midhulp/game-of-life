@@ -6,7 +6,7 @@ def display():
 def collect_grid():
     grid = []
     for _ in range(3):
-        row = input("Enter a row (comma-separated characters): ")
+        row = input("Enter a row (('x' or '0') -separated by comma): ")
         grid.append(row.split(","))
     return grid
 
