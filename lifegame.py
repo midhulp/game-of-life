@@ -28,3 +28,22 @@ def get_count_live_neighbors(grid, row, col):
 
     return live_neighbor_count
 
+def new_gen_update(grid):
+    rows = len(grid)
+    cols = len(grid[0])
+    new_gen_grid = [[0] * cols for _ in range(rows)]
+    # updated_board=[]
+    for i in range(rows):
+        for j in range(cols):
+            live_neighbors = get_count_live_neighbors(grid, i, j)
+            if grid[i][j] == 1 :
+                if live_neighbors < 2 or live_neighbors > 3:
+                    new_gen_grid[i][j] = 0
+                else:
+                    new_gen_grid[i][j] = 1
+            else:
+                if live_neighbors == 3:
+                    new_gen_grid[i][j] = 1
+
+    return new_gen_grid    
+
