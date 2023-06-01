@@ -18,5 +18,10 @@ def test_count_live_neighbors():
     assert lifegame.get_count_live_neighbors(grid, 1, 2) == 3
 
 
+def test_update_grid():
+    sample_grid=[[0, 1, 0],[0, 0, 1],[1, 1, 1]]
+    updated_grid =lifegame.new_gen_update(sample_grid)
+    assert updated_grid == [[0, 0, 0],[1, 0, 1],[0, 1, 1]]
+
 
     
